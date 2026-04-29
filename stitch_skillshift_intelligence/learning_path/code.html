@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e7eeff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "surface-tint": "#4d44e3",
+                    "on-surface-variant": "#464555",
+                    "on-surface": "#111c2d",
+                    "on-tertiary-fixed": "#1a1b23",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-background": "#111c2d",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#712ae2",
+                    "secondary-container": "#8a4cfc",
+                    "on-tertiary-fixed-variant": "#46464f",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#25005a",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "tertiary-fixed-dim": "#c7c5d1",
+                    "surface-bright": "#f9f9ff",
+                    "surface": "#f9f9ff",
+                    "on-primary-fixed": "#0f0069",
+                    "tertiary-fixed": "#e3e1ed",
+                    "inverse-surface": "#263143",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary": "#474751",
+                    "surface-container-low": "#f0f3ff",
+                    "tertiary-container": "#5f5f5f",
+                    "on-tertiary-container": "#dbdae5",
+                    "on-secondary-container": "#fffbff",
+                    "primary-container": "#4f46e5",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-dim": "#cfdaf2",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed": "#e2dfff",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "secondary-fixed": "#eaddff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "sm": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: -40px;
+            width: 2px;
+            background: #e2dfff;
+        }
+        .step-line-last::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-8 h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 border-b border-slate-200/50 dark:border-slate-800/50 shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)]">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent font-display-lg">Transferable Skills Intelligence</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] antialiased text-sm font-medium">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300" href="#">Analysis</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300" href="#">Gap Report</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300" href="#">Transitions</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-5" href="#">Learning Path</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-slate-50/50 p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-slate-50/50 p-2 rounded-full transition-all">settings</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border-2 border-primary-fixed">
+<img alt="User profile avatar" data-alt="A professional headshot of a middle-aged man with a kind smile, set against a soft-focus office background. The lighting is bright and natural, reflecting a modern corporate aesthetic. He wears a clean, navy blue blazer, fitting the premium SaaS professional theme of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBymB4ar7yE0ScKgJxkp57sfifWX7IWifMcVFgpQVXoAHCjJkdpJBX2uf4tGHvPY4DD9h64EQ1K9Aze2anSDf4HvXMEEzez3qWQlKdY4FFWYZK6_m0myPAM_cb-lDPGzA84xr3Pi3de86vXsIgguryfQiQbqxJ6DFB9J9dlXAfVG_rLp7FbBmb-mkPajXRyg2lEbM3ei3j5m4-1v4JG64HR31sfu_t1-joUhQleWUyIihYlGcrVGtXed0XFbzrRFQGLB_bBiX72YHsI"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col py-6 gap-2 h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 fixed left-0 top-20">
+<div class="px-4 mb-6">
+<span class="text-xl font-black text-slate-900 dark:text-white font-display-lg">T.S.I.</span>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold px-1">Career Intelligence</p>
+</div>
+<div class="flex flex-col gap-1 px-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md">Skills Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">difference</span>
+<span class="font-label-md">Gap Results</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">swap_calls</span>
+<span class="font-label-md">Career Transitions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white text-indigo-600 shadow-sm rounded-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md">Learning Path</span>
+</a>
+</div>
+<div class="mt-auto px-4 py-6">
+<div class="bg-gradient-to-br from-indigo-600 to-violet-600 rounded-xl p-4 text-white shadow-lg">
+<p class="text-xs font-bold opacity-80 mb-1">PRO PLAN</p>
+<p class="text-sm font-semibold mb-3">Unlock AI Mentorship</p>
+<button class="w-full py-2 bg-white text-indigo-600 rounded-lg text-xs font-bold hover:bg-opacity-90 transition-all">Upgrade to Pro</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-8 md:p-12 max-w-container-max mx-auto">
+<header class="mb-12">
+<nav class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+<span>Career Path</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-semibold">Data Analyst Roadmap</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">Your personalized path to Data Analyst</h1>
+<p class="font-body-lg text-on-surface-variant">We've identified 5 key technical milestones to bridge your current skill gap. Complete these steps to transition into your new role with confidence.</p>
+</div>
+<div class="bg-surface-container-high p-6 rounded-2xl border border-outline-variant/30 flex items-center gap-6 min-w-[280px]">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-white" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="176" stroke-dashoffset="140" stroke-width="6"></circle>
+</svg>
+<span class="absolute font-bold text-primary">20%</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-wider">Overall Progress</p>
+<p class="font-headline-md text-on-surface">1 of 5 Steps</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Roadmap Section -->
+<section class="max-w-4xl mx-auto space-y-0 relative">
+<!-- Step 1 (Completed) -->
+<div class="flex gap-8 relative step-line pb-16">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center z-10 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-300 group">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-surface-container text-primary font-label-sm rounded-full">Step 1 • COMPLETED</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-sm">schedule</span> 4 weeks</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2">Foundational SQL for Analytics</h3>
+<p class="text-on-surface-variant mb-6 font-body-md">Master complex queries, joins, and window functions necessary for extracting meaningful insights from large datasets.</p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-slate-50 text-slate-500 px-4 py-2 rounded-lg font-label-md border border-slate-200">
+<span class="material-symbols-outlined text-sm">verified</span> Course Completed
+                                </button>
+<button class="text-primary font-label-md hover:underline">View Certificate</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex gap-8 relative step-line pb-16">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-white border-4 border-primary flex items-center justify-center z-10 shadow-lg shadow-primary/10">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-bl-xl rounded-tr-xl">Next Action</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-primary text-white font-label-sm rounded-full">Step 2 • IN PROGRESS</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-sm font-semibold"><span class="material-symbols-outlined text-sm">schedule</span> 6 weeks</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2">Statistical Data Analysis with Python</h3>
+<p class="text-on-surface-variant mb-6 font-body-md">Learn to use Pandas, NumPy, and Matplotlib for rigorous data cleaning and exploratory analysis. This is the core skill for any modern analyst.</p>
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-6 py-3 rounded-xl font-label-md shadow-lg shadow-primary/30 hover:scale-105 transition-transform" href="#">
+                                    Continue Learning <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<div class="flex -space-x-2">
+<img alt="Mentor" class="w-8 h-8 rounded-full border-2 border-white" data-alt="A small circular avatar showing a professional woman with glasses, smiling warmly. The image has a clean, high-key lighting style typical of a professional headshot for a modern tech platform mentor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfJCCXrurp-Vcc2ji-LBteVc6KPpBchaCTVY459pomsS73dkEmgTKviYVdzBDsmBJNl115mrrIxf17yrG6-xagMeCsbBtKg8VMgU9oeKUhBzZHA9B6CHWsXnk6nO7C8S027N6HhOH0gA-jVPdMy-QMEwDQn1rV0p2M0qB-Jwzz2afdzsZ5VAX95WzmH8HIuGHcxBo5R9X7MwLmL9qtOArUJcgSYnwfQ2MivrZyDKFeyqIX5q77nESeKmkAc4SVQVydvRxE-sMRm-hP"/>
+<div class="flex items-center px-4 py-2 bg-surface-container rounded-full text-xs font-medium text-primary">3 mentors active</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3 (Upcoming) -->
+<div class="flex gap-8 relative step-line pb-16">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 border-2 border-slate-300 flex items-center justify-center z-10">
+<span class="text-slate-400 font-bold">3</span>
+</div>
+<div class="flex-1 opacity-60 hover:opacity-100 transition-opacity">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-slate-100 text-slate-500 font-label-sm rounded-full">Step 3 • UPCOMING</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-sm">schedule</span> 3 weeks</span>
+</div>
+<h3 class="font-headline-md text-slate-700 mb-2">Advanced Tableau Visualizations</h3>
+<p class="text-slate-500 mb-6 font-body-md">Translate complex data results into compelling visual stories using industry-standard dashboarding tools.</p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 border border-slate-200 text-slate-600 px-4 py-2 rounded-lg font-label-md hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">link</span> Course Preview
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 4 (Upcoming) -->
+<div class="flex gap-8 relative step-line pb-16">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 border-2 border-slate-300 flex items-center justify-center z-10">
+<span class="text-slate-400 font-bold">4</span>
+</div>
+<div class="flex-1 opacity-60 hover:opacity-100 transition-opacity">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-slate-100 text-slate-500 font-label-sm rounded-full">Step 4 • UPCOMING</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-sm">schedule</span> 5 weeks</span>
+</div>
+<h3 class="font-headline-md text-slate-700 mb-2">Machine Learning Fundamentals</h3>
+<p class="text-slate-500 mb-6 font-body-md">Understand predictive modeling and classification algorithms that set senior analysts apart from the pack.</p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 border border-slate-200 text-slate-600 px-4 py-2 rounded-lg font-label-md hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">link</span> Syllabus
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 5 (Final) -->
+<div class="flex gap-8 relative step-line-last">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 border-2 border-slate-300 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-slate-400">emoji_events</span>
+</div>
+<div class="flex-1 opacity-60 hover:opacity-100 transition-opacity">
+<div class="bg-gradient-to-br from-white to-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-slate-100 text-slate-500 font-label-sm rounded-full">Step 5 • CAPSTONE</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-sm">schedule</span> 2 weeks</span>
+</div>
+<h3 class="font-headline-md text-slate-700 mb-2">Real-world Portfolio Project</h3>
+<p class="text-slate-500 mb-6 font-body-md">Apply all learned skills to solve a genuine business problem using a real dataset. Includes interview preparation and portfolio review.</p>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-md uppercase">Locked</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Support CTA -->
+<footer class="mt-20 text-center bg-white border border-slate-200 p-12 rounded-[32px] shadow-sm">
+<div class="max-w-xl mx-auto">
+<h2 class="font-headline-lg text-on-surface mb-4">Need a study buddy?</h2>
+<p class="font-body-md text-on-surface-variant mb-8">Join a cohort of 12 other users currently working through the Statistics with Python module. Shared learning increases completion rates by 40%.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-white font-label-md px-8 py-4 rounded-xl hover:bg-primary-container transition-all">Browse Community</button>
+<button class="bg-white text-primary border-2 border-primary font-label-md px-8 py-4 rounded-xl hover:bg-surface-container transition-all">Talk to a Coach</button>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

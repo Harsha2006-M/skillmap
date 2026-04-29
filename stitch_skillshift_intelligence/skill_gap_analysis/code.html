@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e7eeff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "surface-tint": "#4d44e3",
+                    "on-surface-variant": "#464555",
+                    "on-surface": "#111c2d",
+                    "on-tertiary-fixed": "#1a1b23",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-background": "#111c2d",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#712ae2",
+                    "secondary-container": "#8a4cfc",
+                    "on-tertiary-fixed-variant": "#46464f",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#25005a",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "tertiary-fixed-dim": "#c7c5d1",
+                    "surface-bright": "#f9f9ff",
+                    "surface": "#f9f9ff",
+                    "on-primary-fixed": "#0f0069",
+                    "tertiary-fixed": "#e3e1ed",
+                    "inverse-surface": "#263143",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary": "#474751",
+                    "surface-container-low": "#f0f3ff",
+                    "tertiary-container": "#5f5f69",
+                    "on-tertiary-container": "#dbdae5",
+                    "on-secondary-container": "#fffbff",
+                    "primary-container": "#4f46e5",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-dim": "#cfdaf2",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed": "#e2dfff",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "secondary-fixed": "#eaddff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "sm": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bg-brand-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<nav class="sticky top-0 w-full flex justify-between items-center px-8 h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 border-b border-slate-200/50 dark:border-slate-800/50 shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)]">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent font-['Inter'] antialiased">Transferable Skills Intelligence</span>
+<div class="hidden md:flex gap-6">
+<a class="font-label-md text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Dashboard</a>
+<a class="font-label-md text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Analysis</a>
+<a class="font-label-md text-indigo-600 border-b-2 border-indigo-600 pb-5" href="#">Gap Report</a>
+<a class="font-label-md text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Transitions</a>
+<a class="font-label-md text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Learning Path</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-50/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-50/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-slate-600">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-indigo-100">
+<img alt="User profile avatar" class="h-full w-full object-cover" data-alt="A professional studio portrait of a confident male professional in his late 30s. The lighting is soft and cinematic, with a clean, bright-mode minimalist background that emphasizes a high-end corporate aesthetic. The overall mood is expert and poised, reflecting the calm confidence of a user navigating a career transition using premium digital intelligence tools. Soft indigo shadows complement the color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp4yxmT8C89CXZcOrXdjkHmqLy_Y_0cju-1ssc-L8OBg-qj1gj91-TKV0ktkPeyOf-gETyFZUT05Lbfv8KIewmR1Bwzq26KNNRtJ_59FZCPwzreiFdgBbTRQwKTN1VANW2mujo9BcCOcwtbnrzD3m6fFzob2xUnBVWuym-neht2CsR96qP2dugLLtqQk5jCmj4yXxqaB-pJnnFVtnW4dBBpbBk3UH_t4xFLSXmlnJqDVwcnXQhOPlfAjZNYO4OwqtRx7K_L7jTBBsn"/>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-8 py-xl">
+<header class="mb-lg">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Gap Analysis Report</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Comparing your current competencies against the requirements for <span class="font-semibold text-primary">Senior Strategic Operations Manager</span>.</p>
+</header>
+<div class="grid grid-cols-12 gap-gutter">
+<section class="col-span-12 lg:col-span-4 space-y-gutter">
+<div class="bg-white rounded-xl p-lg shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)] border border-surface-container transition-all duration-300 card-hover">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Role Compatibility</h3>
+<div class="relative flex flex-col items-center justify-center py-6">
+<div class="relative w-48 h-48">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="12"></circle>
+<circle cx="96" cy="96" fill="transparent" r="88" stroke="url(#gradient)" stroke-dasharray="552.92" stroke-dashoffset="138.23" stroke-linecap="round" stroke-width="12"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#4f46e5"></stop>
+<stop offset="100%" stop-color="#7c3aed"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-5xl font-black text-on-surface">75%</span>
+<span class="font-label-md text-on-surface-variant">Match</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container">
+<p class="font-label-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+                            High probability of transition success.
+                        </p>
+</div>
+</div>
+<div class="bg-white rounded-xl p-lg shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)] border border-surface-container card-hover transition-all duration-300">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Analysis Summary</h3>
+<p class="font-body-md text-on-surface-variant mb-6">
+                        Your background in operational efficiency and team leadership aligns perfectly with 75% of the target role's core requirements. The primary gap lies in specialized financial forecasting and cross-functional supply chain integration.
+                    </p>
+<button class="w-full py-4 bg-brand-gradient text-on-primary font-label-md rounded-lg shadow-lg shadow-indigo-200 active:scale-95 transition-all duration-200">
+                        View Learning Path
+                    </button>
+</div>
+</section>
+<section class="col-span-12 lg:col-span-8 space-y-gutter">
+<div class="bg-white rounded-xl p-lg shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)] border border-surface-container">
+<div class="flex items-center justify-between mb-lg">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-emerald-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600">check_circle</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Your Skills</h3>
+<p class="font-label-md text-on-surface-variant">Skills you already possess for this role</p>
+</div>
+</div>
+<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-label-sm">18 Matches</span>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Project Management</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Stakeholder Communication</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Agile Methodology</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Team Leadership</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Process Optimization</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Conflict Resolution</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Strategic Planning</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Budgeting</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Risk Assessment</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Vendor Management</span>
+<span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full font-label-md border border-emerald-100">Data Interpretation</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-lg shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)] border border-surface-container">
+<div class="flex items-center justify-between mb-lg">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-orange-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-600">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Missing Skills</h3>
+<p class="font-label-md text-on-surface-variant">Recommended focus areas for your transition</p>
+</div>
+</div>
+<span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-label-sm">6 Gaps</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-xl border border-orange-100 bg-orange-50/30">
+<div class="p-2 bg-orange-100 rounded-lg">
+<span class="material-symbols-outlined text-orange-700">trending_up</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-label-md text-on-surface">Advanced Financial Forecasting</h4>
+<span class="font-label-sm text-orange-700 uppercase tracking-wider">Critical Gap</span>
+</div>
+<p class="text-sm text-on-surface-variant">Required for quarterly performance modeling and long-term asset allocation planning.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-3 py-1 bg-white text-on-surface-variant rounded-full text-xs border border-surface-container">Skill: Forecasting</span>
+<span class="px-3 py-1 bg-white text-on-surface-variant rounded-full text-xs border border-surface-container">Tool: Adaptive Insights</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl border border-orange-100 bg-orange-50/30">
+<div class="p-2 bg-orange-100 rounded-lg">
+<span class="material-symbols-outlined text-orange-700">hub</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-label-md text-on-surface">Cross-Functional Supply Chain Management</h4>
+<span class="font-label-sm text-orange-700 uppercase tracking-wider">High Importance</span>
+</div>
+<p class="text-sm text-on-surface-variant">Essential for managing the end-to-end flow of materials and information across departments.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-3 py-1 bg-white text-on-surface-variant rounded-full text-xs border border-surface-container">Skill: Logistics</span>
+<span class="px-3 py-1 bg-white text-on-surface-variant rounded-full text-xs border border-surface-container">Skill: ERP Systems</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 pt-2">
+<span class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full font-label-md border border-orange-100">SQL Data Queries</span>
+<span class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full font-label-md border border-orange-100">Change Management Certification</span>
+<span class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full font-label-md border border-orange-100">Tableau Visualization</span>
+<span class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full font-label-md border border-orange-100">Six Sigma Green Belt</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="mt-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low rounded-xl p-6 border border-surface-container-high group cursor-pointer hover:bg-surface-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">menu_book</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Recommended Course</h4>
+<p class="text-sm text-on-surface-variant mb-4">Strategic Operations for Modern Enterprise – 12 hours of specialized training.</p>
+<div class="flex items-center text-primary font-label-md group-hover:gap-2 transition-all">
+                    Learn more <span class="material-symbols-outlined ml-1">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-surface-container-high group cursor-pointer hover:bg-surface-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">groups</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Peer Comparison</h4>
+<p class="text-sm text-on-surface-variant mb-4">You are in the top 20% of applicants with similar current role backgrounds.</p>
+<div class="flex items-center text-primary font-label-md group-hover:gap-2 transition-all">
+                    View Benchmark <span class="material-symbols-outlined ml-1">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-surface-container-high group cursor-pointer hover:bg-surface-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">psychology</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Bridge Interview</h4>
+<p class="text-sm text-on-surface-variant mb-4">AI-powered practice session focused on your specific skill gaps.</p>
+<div class="flex items-center text-primary font-label-md group-hover:gap-2 transition-all">
+                    Start Prep <span class="material-symbols-outlined ml-1">arrow_forward</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest py-lg border-t border-surface-container">
+<div class="max-w-container-max mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent mb-2">T.S.I.</span>
+<p class="font-label-sm text-on-surface-variant">Empowering career mobility through intelligence.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<p class="font-label-sm text-on-surface-variant">© 2024 Transferable Skills Intelligence. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

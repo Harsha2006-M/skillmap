@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e7eeff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "surface-tint": "#4d44e3",
+                    "on-surface-variant": "#464555",
+                    "on-surface": "#111c2d",
+                    "on-tertiary-fixed": "#1a1b23",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-background": "#111c2d",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#712ae2",
+                    "secondary-container": "#8a4cfc",
+                    "on-tertiary-fixed-variant": "#46464f",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#25005a",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "tertiary-fixed-dim": "#c7c5d1",
+                    "surface-bright": "#f9f9ff",
+                    "surface": "#f9f9ff",
+                    "on-primary-fixed": "#0f0069",
+                    "tertiary-fixed": "#e3e1ed",
+                    "inverse-surface": "#263143",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary": "#474751",
+                    "surface-container-low": "#f0f3ff",
+                    "tertiary-container": "#5f5f69",
+                    "on-tertiary-container": "#dbdae5",
+                    "on-secondary-container": "#fffbff",
+                    "primary-container": "#4f46e5",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-dim": "#cfdaf2",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed": "#e2dfff",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "secondary-fixed": "#eaddff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "sm": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="hidden md:flex h-screen w-64 border-r border-slate-200 bg-slate-50 flex-col py-6 gap-2 fixed left-0 top-0 z-50">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-black text-slate-900 tracking-tight">T.S.I.</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Career Intelligence</p>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-white text-primary shadow-sm rounded-lg mx-2 my-1 font-semibold transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 mx-2 my-1 rounded-lg font-semibold transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md">Skills Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 mx-2 my-1 rounded-lg font-semibold transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="difference">difference</span>
+<span class="font-label-md text-label-md">Gap Results</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 mx-2 my-1 rounded-lg font-semibold transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="swap_calls">swap_calls</span>
+<span class="font-label-md text-label-md">Career Transitions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 mx-2 my-1 rounded-lg font-semibold transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md text-label-md">Learning Path</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="bg-gradient-to-br from-primary to-secondary p-4 rounded-xl text-white shadow-lg mb-6">
+<p class="text-xs font-bold opacity-80 mb-1">PRO PLAN</p>
+<p class="text-sm font-bold mb-3">Unlock AI Insights</p>
+<button class="w-full bg-white text-primary text-xs font-bold py-2 rounded-lg active:scale-95 transition-all">Upgrade to Pro</button>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="flex-1 md:ml-64 flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-8 h-20 bg-white/80 backdrop-blur-xl z-40 border-b border-slate-200/50 shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)]">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent font-['Inter'] antialiased">Transferable Skills Intelligence</span>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="font-label-md text-label-md text-indigo-600 border-b-2 border-indigo-600 pb-5 translate-y-[10px]" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-slate-500 hover:text-slate-900 transition-all" href="#">Analysis</a>
+<a class="font-label-md text-label-md text-slate-500 hover:text-slate-900 transition-all" href="#">Gap Report</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="bg-slate-50 border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search skills..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-white shadow-sm ml-2">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person with a warm, confident expression. The lighting is soft and natural, against a clean, minimalist studio background. The style is modern and high-end, fitting for a professional career platform profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpo6empNLo3Tt87uT5NbTkAkb6XHRMdcZh6Esy2DdTt5UW6XDfi5TaufG3mMSaTizmRZRvLnkZJuvODjHN5KKHBqjct82yYi1mR4l9y6hgHharN4xcr1g93ZvdOottwtNNZtx7LcMx3pA6AD6K2eikhgnZq5oNKLZdO53GX33ZmtgoDAdt6FG5wxFPEJHypcyhCSEf-MABOOQwI1dmUSNti1UW9DLeDFCo0bN92G6xPSg87EG3w8ED5icM25WQAsdcjwQdm_u-GTWb"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-gutter max-w-container-max mx-auto w-full space-y-xl py-xl">
+<!-- Welcome Header -->
+<section class="space-y-base">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-wider">Dashboard Overview</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Welcome back, Alex!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Ready to discover where your expertise takes you next? Upload your latest resume to analyze your transferable skills and bridge the gap to your next career milestone.</p>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Main Upload Area -->
+<div class="lg:col-span-8 space-y-gutter">
+<div class="bg-white p-lg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-slate-100 group transition-all hover:scale-[1.01] hover:shadow-[0_20px_50px_-12px_rgba(53,37,205,0.08)]">
+<div class="border-2 border-dashed border-slate-200 rounded-xl p-xl flex flex-col items-center justify-center text-center space-y-sm bg-slate-50/50 hover:bg-white hover:border-primary/40 transition-all duration-300">
+<div class="h-20 w-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Upload Your Resume</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mx-auto">Drag and drop your PDF or DOCX file here, or click to browse your computer.</p>
+<div class="pt-4">
+<button class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all active:scale-95">
+                                    Browse Files
+                                </button>
+</div>
+<p class="text-[10px] text-slate-400 font-medium pt-4 uppercase tracking-widest">Supported: PDF, DOCX, TXT (Max 5MB)</p>
+</div>
+</div>
+<!-- Target Role Selection Card -->
+<div class="bg-white p-lg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-slate-100">
+<div class="flex flex-col md:flex-row md:items-end gap-gutter">
+<div class="flex-1 space-y-base">
+<label class="font-label-md text-label-md text-on-surface-variant block">What's your next move?</label>
+<div class="relative">
+<select class="w-full h-14 pl-4 pr-10 appearance-none bg-slate-50 border-slate-200 rounded-xl font-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+<option disabled="" selected="" value="">Select Target Job Role</option>
+<option>Product Manager</option>
+<option>Data Scientist</option>
+<option>UX Designer</option>
+<option>Marketing Director</option>
+<option>Software Engineer</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<button class="h-14 px-10 bg-slate-100 hover:bg-primary hover:text-white text-primary font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group whitespace-nowrap">
+<span>Start Intelligence Analysis</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Side Content -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Statistics Card -->
+<div class="bg-white p-md rounded-xl shadow-sm border border-slate-100 space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Recent Activity</h4>
+<div class="space-y-sm">
+<div class="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer">
+<div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Analysis Complete</p>
+<p class="text-xs text-slate-400">Marketing Specialist Path</p>
+</div>
+<span class="text-[10px] text-slate-400">2h ago</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer">
+<div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="history">history</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Draft Saved</p>
+<p class="text-xs text-slate-400">Resume_v4.pdf</p>
+</div>
+<span class="text-[10px] text-slate-400">Yesterday</span>
+</div>
+</div>
+</div>
+<!-- Market Insights Card -->
+<div class="relative overflow-hidden rounded-xl h-64 shadow-lg group">
+<img alt="Career Market Insights" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A clean, conceptual high-tech data visualization interface with glowing blue and violet charts, floating nodes representing skills, and a professional workspace context. The lighting is moody but clear, emphasizing a sophisticated career technology and intelligence aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx4FK1K33aQ-clK72xBkUPCto3GiehBqlZskGbusN-JkSTwDtRdrgf9Dq4CahxMOGCvDGnTx7-Q3yIRKj56Gofs6XR-fpThv7pKQd4rjcsw_jiN5Egaw9-LdIiyPRFLg8boFQoVce2Dd1Q1ho5JWHQH-nC543tOQJ0ydqG4mny2OGPkQ2R9yldtlWG1XrovyQUtYmj3iZxOt-jj296orn5TI0EJl85GUR2AitLMX9hT9-kVe13ljYSUrjgoa5a7wbsM0fIzZcVoRyR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent p-6 flex flex-col justify-end">
+<h4 class="text-white font-bold text-lg mb-1">Trending Skills</h4>
+<p class="text-white/80 text-xs mb-4">Discover the most sought-after competencies in Product Management for 2024.</p>
+<a class="inline-flex items-center text-white text-xs font-bold gap-2 hover:underline" href="#">
+                                View Full Report <span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+</a>
+</div>
+</div>
+<!-- Tips Card -->
+<div class="bg-surface-container p-md rounded-xl border border-primary/10">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<div class="space-y-base">
+<h5 class="text-sm font-bold text-primary">Pro Tip</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Tailoring your resume summary to include 'Growth Mindset' can increase your match score for leadership roles by up to 15%.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Quick Highlights -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter pt-8">
+<div class="bg-white p-sm rounded-xl border border-slate-100 flex items-center gap-4">
+<div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Skills Extracted</p>
+<p class="text-lg font-black text-on-surface">42 <span class="text-xs font-medium text-slate-400 ml-1">Total</span></p>
+</div>
+</div>
+<div class="bg-white p-sm rounded-xl border border-slate-100 flex items-center gap-4">
+<div class="w-12 h-12 bg-violet-50 rounded-full flex items-center justify-center text-violet-600">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Market Fit</p>
+<p class="text-lg font-black text-on-surface">86% <span class="text-xs font-medium text-emerald-500 ml-1">+4%</span></p>
+</div>
+</div>
+<div class="bg-white p-sm rounded-xl border border-slate-100 flex items-center gap-4">
+<div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Career Level</p>
+<p class="text-lg font-black text-on-surface">Senior <span class="text-xs font-medium text-slate-400 ml-1">Assessed</span></p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Mobile Navigation Bottom -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-200 flex items-center justify-around z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-[10px] font-bold">Analyze</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="swap_calls">swap_calls</span>
+<span class="text-[10px] font-bold">Paths</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</nav>
+</body></html>

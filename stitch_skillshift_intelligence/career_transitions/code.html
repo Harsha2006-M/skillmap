@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e7eeff",
+                    "primary": "#3525cd",
+                    "outline": "#777587",
+                    "surface-tint": "#4d44e3",
+                    "on-surface-variant": "#464555",
+                    "on-surface": "#111c2d",
+                    "on-tertiary-fixed": "#1a1b23",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-background": "#111c2d",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#712ae2",
+                    "secondary-container": "#8a4cfc",
+                    "on-tertiary-fixed-variant": "#46464f",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#25005a",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "tertiary-fixed-dim": "#c7c5d1",
+                    "surface-bright": "#f9f9ff",
+                    "surface": "#f9f9ff",
+                    "on-primary-fixed": "#0f0069",
+                    "tertiary-fixed": "#e3e1ed",
+                    "inverse-surface": "#263143",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary": "#474751",
+                    "surface-container-low": "#f0f3ff",
+                    "tertiary-container": "#5f5f69",
+                    "on-tertiary-container": "#dbdae5",
+                    "on-secondary-container": "#fffbff",
+                    "primary-container": "#4f46e5",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-dim": "#cfdaf2",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed": "#e2dfff",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "secondary-fixed": "#eaddff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "sm": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopAppBar from JSON -->
+<header class="sticky top-0 w-full flex justify-between items-center px-8 h-20 bg-white/80 backdrop-blur-xl z-50 border-b border-slate-200/50 shadow-[0_4px_20px_-4px_rgba(79,70,229,0.1)]">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">Transferable Skills Intelligence</span>
+<nav class="hidden md:flex items-center gap-6 h-full">
+<a class="font-['Inter'] antialiased text-sm font-medium text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Dashboard</a>
+<a class="font-['Inter'] antialiased text-sm font-medium text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Analysis</a>
+<a class="font-['Inter'] antialiased text-sm font-medium text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Gap Report</a>
+<a class="font-['Inter'] antialiased text-sm font-medium text-indigo-600 border-b-2 border-indigo-600 pb-5" href="#">Transitions</a>
+<a class="font-['Inter'] antialiased text-sm font-medium text-slate-500 hover:text-slate-900 transition-all duration-300" href="#">Learning Path</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-50/50 transition-all active:scale-95">
+<span class="material-symbols-outlined text-slate-500">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50/50 transition-all active:scale-95">
+<span class="material-symbols-outlined text-slate-500">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm">
+<img alt="User profile avatar" data-alt="A professional studio headshot of a middle-aged woman with a confident smile, wearing a modern navy blazer. The lighting is soft and directional, typical of a high-end corporate portrait. The background is a clean, out-of-focus modern office interior with soft indigo and white tones, matching a premium SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Gi9Xen-daO1xpGtSUL7uP3iadMnenTJBVc78erbL4fvNvTXo8TTozKi31Rnjn4wfc0iOZNFiGEJUcnPDIm2PIl_L9bQ0E1khpfctQR1coaz58cmY9jVXW2lBcpzlXvlh3WY1COvr_rTzyq0pJkOpXc57Dxsus7idR_nwsc9-5D2VgHEGnbl8DSs5pFUqAgd0nqk__ms794DPeQhXzSFFnDs81ZtsSBWELdMmSUXeQZEhLTa7qe1_6eENLhXPr0ZCvsAaJormgos_"/>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="mb-lg">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">Career Transition Suggestions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Based on your analyzed core competencies in Project Management and Strategic Communication, we've identified these high-potential pivot opportunities.</p>
+</div>
+<!-- Bento Grid Layout for Career Suggestions -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Card 1: Primary Match -->
+<div class="lg:col-span-8 bg-white p-lg rounded-xl border border-slate-200/50 shadow-sm card-hover transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="inline-block px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-xs">Recommended Pivot</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Product Operations Manager</h2>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-display-lg font-display-lg text-primary">94%</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Skill Match</span>
+</div>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full mb-md overflow-hidden">
+<div class="h-full bg-gradient-to-r from-indigo-600 to-violet-600 w-[94%]"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg leading-relaxed">
+                        Your expertise in streamlining workflows and stakeholder management translates directly to Product Ops. This role focuses on scaling the product team's efficiency by implementing the same rigorous process improvements you've mastered in your current career.
+                    </p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="h-8 w-8 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]">verified</span></div>
+<div class="h-8 w-8 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]">psychology</span></div>
+<div class="h-8 w-8 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]">groups</span></div>
+</div>
+<button class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-label-md text-label-md px-6 py-3 rounded-lg hover:shadow-lg transition-all active:scale-95 flex items-center gap-2">
+                        View Path <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Secondary Match (Side) -->
+<div class="lg:col-span-4 bg-white p-md rounded-xl border border-slate-200/50 shadow-sm card-hover transition-all duration-300 flex flex-col h-full">
+<div class="mb-sm flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary-container bg-secondary-fixed px-2 py-0.5 rounded">High Growth</span>
+<span class="font-headline-md text-headline-md text-primary">82%</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Customer Success Architect</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
+                    Leverage your technical communication skills to bridge the gap between complex client needs and product development. 
+                </p>
+<div class="pt-md border-t border-slate-100 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Est. Salary: $125k+</span>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                        View Path <span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Tertiary Match (Bottom) -->
+<div class="lg:col-span-4 bg-white p-md rounded-xl border border-slate-200/50 shadow-sm card-hover transition-all duration-300 flex flex-col h-full">
+<div class="mb-sm flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary-container bg-secondary-fixed px-2 py-0.5 rounded">Strategic</span>
+<span class="font-headline-md text-headline-md text-primary">78%</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Change Management Lead</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
+                    Apply your organizational psychology background to lead enterprise-level transitions and digital transformation projects.
+                </p>
+<div class="pt-md border-t border-slate-100 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Est. Salary: $140k+</span>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                        View Path <span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Asymmetric Visual Card -->
+<div class="lg:col-span-4 relative overflow-hidden rounded-xl group">
+<img alt="Learning path visualization" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic, high-key image of a person's hand tracing a glowing, neon-indigo line through a 3D translucent holographic map of interconnected data nodes. The lighting is sleek and futuristic with soft purple ambient glows. The style is ultra-modern, high-fidelity corporate digital art, evoking a sense of discovery and career progression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZm3pSnnccz7MxplpleMp2iKft1RLq971ujlc3Q7pX5mL0bsk-tzJosNvXpQpMAa0HxpCQLaLE11ZIi3BQRBh5e5v_h4opSbp8Cz-T3IeZP4jRx4Vwmv9sBc0dQTcluLE-YgT59PWYBzLRuwLm2CXPMnK62NAPW4RbtVohgefKEXVVEdaxol4qA5W8lnmaSUfMhP8iOBAxmTAC2mWxqSjM5P0_yOgtiUMED9f9sJmPaVq9v0SoaKN7LVvS4xQCiYw0TjYWHpSZqch"/>
+<div class="absolute inset-0 bg-gradient-to-t from-indigo-900/90 to-transparent flex flex-col justify-end p-md">
+<h3 class="font-headline-md text-headline-md text-white mb-xs">Bridge the Gap</h3>
+<p class="text-white/80 text-body-md mb-md">Unlock these roles by completing 3 micro-certifications.</p>
+<button class="w-full py-3 bg-white text-indigo-900 font-label-md rounded-lg shadow-xl active:scale-95 transition-all">Start Your Learning Path</button>
+</div>
+</div>
+<!-- Card 5: Tertiary Match (Bottom) -->
+<div class="lg:col-span-4 bg-white p-md rounded-xl border border-slate-200/50 shadow-sm card-hover transition-all duration-300 flex flex-col h-full">
+<div class="mb-sm flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary-container bg-secondary-fixed px-2 py-0.5 rounded">Analytical</span>
+<span class="font-headline-md text-headline-md text-primary">71%</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Business Systems Analyst</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
+                    Your ability to dissect complex data and present actionable insights makes you an ideal candidate for systems architecture.
+                </p>
+<div class="pt-md border-t border-slate-100 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Est. Salary: $115k+</span>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                        View Path <span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Section: Transition Intelligence -->
+<section class="mt-xl grid grid-cols-1 md:grid-cols-2 gap-lg items-center bg-surface-container rounded-xl p-lg">
+<div class="relative rounded-xl overflow-hidden aspect-video shadow-2xl">
+<img alt="Career Insights Visualization" class="w-full h-full object-cover" data-alt="An intricate, beautiful data visualization showing thousands of floating particles connecting and forming new shapes in a 3D space. The color palette is composed of shimmering indigo, deep violets, and crisp whites on a subtle light grey background. The lighting is ethereal and bright, symbolizing clarity and the convergence of complex professional skills into new career paths." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOUzUMyI5Sd48mnno-tPJ7Z2sogflVmt51axkwm8ofuznot2xRUaVtQNKrdIkv_yR0pNh2CcqEKs0q5kGFOcKn_79tJzEAtBFaujAUojraqPxS_DrAJ8x8MR723h9xV32-5HVjqh2Il7YRAP9BDidYmemZYsxInkP-gH_c16zaIJogJH-1TvendBEJBBUo-yVOgadYBW06-CUPdmYZg3pkSrTqquIVlfmqXgfhrY1VnTGDcMELv5pf9cvcG-Q31a2IKiInQuy0svB1"/>
+<div class="absolute inset-0 bg-primary/10 backdrop-blur-[2px]"></div>
+</div>
+<div class="space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Why these suggestions?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Our intelligence engine analyzes over 450 semantic skill markers. Unlike traditional job boards, we don't look at your titles—we look at the <span class="font-semibold text-primary">atomic components</span> of your work.
+                </p>
+<div class="grid grid-cols-2 gap-sm">
+<div class="p-sm bg-white rounded-lg">
+<span class="material-symbols-outlined text-primary block mb-base">trending_up</span>
+<span class="font-label-sm text-on-surface">Market Demand</span>
+<p class="text-[12px] text-outline">High visibility roles</p>
+</div>
+<div class="p-sm bg-white rounded-lg">
+<span class="material-symbols-outlined text-primary block mb-base">account_balance_wallet</span>
+<span class="font-label-sm text-on-surface">Salary Equity</span>
+<p class="text-[12px] text-outline">+15% Avg. increase</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Desktop Shell Mock - Fixed) -->
+<!-- Note: TopAppBar is active as per JSON 'TopAppBar' rule for 'Transitions' being current page -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 px-gutter py-xs flex justify-around items-center z-50">
+<div class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px]">Dashboard</span>
+</div>
+<div class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-[10px]">Analysis</span>
+</div>
+<div class="flex flex-col items-center text-indigo-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">swap_calls</span>
+<span class="text-[10px] font-semibold">Transitions</span>
+</div>
+<div class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="text-[10px]">Paths</span>
+</div>
+</footer>
+</body></html>
