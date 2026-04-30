@@ -42,6 +42,11 @@ export default function PlatformPage() {
                     <option value="UX Designer">UX Designer</option>
                     <option value="Marketing Director">Marketing Director</option>
                     <option value="Software Engineer">Software Engineer</option>
+                    <option value="Precision Agriculture Specialist">Precision Agriculture Specialist</option>
+                    <option value="Agricultural Data Analyst">Agricultural Data Analyst</option>
+                    <option value="Clinical Data Coordinator">Clinical Data Coordinator</option>
+                    <option value="Healthcare IT Specialist">Healthcare IT Specialist</option>
+                    <option value="Bioinformatics Researcher">Bioinformatics Researcher</option>
                   </select>
                   <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">expand_more</span>
                 </div>

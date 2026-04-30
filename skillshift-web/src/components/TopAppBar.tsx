@@ -23,11 +23,13 @@ export default function TopAppBar() {
       .slice(0, 5);
   }, [searchQuery, allSkills]);
 
-  const handleSearchSubmit = (skill: string) => {
-    if (skill.trim()) {
+  const handleSearchSubmit = (query: string) => {
+    if (query.trim()) {
+      // Clean up search query (e.g., "python tutorial" -> "python")
+      const cleanedSkill = query.toLowerCase().replace(/tutorial/g, '').trim();
       setSearchQuery('');
       setIsFocused(false);
-      navigate(`/course/${encodeURIComponent(skill)}`);
+      navigate(`/course/${encodeURIComponent(cleanedSkill)}`);
     }
   };
 

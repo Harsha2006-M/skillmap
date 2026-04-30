@@ -13,6 +13,9 @@ import CoursePage from './pages/CoursePage';
 import PricingPage from './pages/PricingPage';
 import SettingsPage from './pages/SettingsPage';
 import HelpCenterPage from './pages/HelpCenterPage';
+import CertificatePage from './pages/CertificatePage';
+import SuggestionMasterPage from './pages/SuggestionMasterPage';
+import JobAlertPage from './pages/JobAlertPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -30,7 +33,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Navigate to="/upload" replace />} />
-            
+
             {/* Protected Routes */}
             <Route path="/upload" element={<ProtectedRoute><UploadPage /></ProtectedRoute>} />
             <Route path="/platform" element={<ProtectedRoute><PlatformPage /></ProtectedRoute>} />
@@ -38,6 +41,9 @@ function App() {
             <Route path="/skills-analysis" element={<ProtectedRoute><SkillsAnalysisPage /></ProtectedRoute>} />
             <Route path="/gap-results" element={<ProtectedRoute><GapResultsPage /></ProtectedRoute>} />
             <Route path="/learning-path" element={<ProtectedRoute><LearningPathPage /></ProtectedRoute>} />
+            <Route path="/certificate/:skill" element={<ProtectedRoute><CertificatePage /></ProtectedRoute>} />
+            <Route path="/suggestion-master" element={<ProtectedRoute><SuggestionMasterPage /></ProtectedRoute>} />
+            <Route path="/job-alerts" element={<ProtectedRoute><JobAlertPage /></ProtectedRoute>} />
             <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
             <Route path="/course/:skill" element={<ProtectedRoute><CoursePage /></ProtectedRoute>} />
             <Route path="/pricing" element={<ProtectedRoute><PricingPage /></ProtectedRoute>} />

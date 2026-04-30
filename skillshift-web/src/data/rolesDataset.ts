@@ -1,9 +1,35 @@
 export interface RoleData {
   title: string;
   skills: string[];
+  domain?: string;
 }
 
 export const rolesDataset: RoleData[] = [
+  {
+    "title": "Precision Agriculture Specialist",
+    "domain": "Agriculture",
+    "skills": ["GPS Mapping", "Data Analysis", "Drone Operations", "Soil Science", "IoT Sensors", "Sustainability", "Remote Sensing", "Automation"]
+  },
+  {
+    "title": "Agricultural Data Analyst",
+    "domain": "Agriculture",
+    "skills": ["Python", "SQL", "Predictive Modeling", "Crop Yield Analysis", "GIS", "Resource Management", "Environmental Science"]
+  },
+  {
+    "title": "Clinical Data Coordinator",
+    "domain": "Medical",
+    "skills": ["Clinical Trials", "Data Management", "GCP", "EDC Systems", "Statistical Analysis", "Healthcare Compliance", "Pharmacovigilance"]
+  },
+  {
+    "title": "Healthcare IT Specialist",
+    "domain": "Medical",
+    "skills": ["HL7", "FHIR", "EHR Systems", "Network Security", "Database Administration", "Patient Privacy", "Troubleshooting"]
+  },
+  {
+    "title": "Bioinformatics Researcher",
+    "domain": "Medical",
+    "skills": ["Python", "R", "Genomics", "Sequence Analysis", "Biostatistics", "Machine Learning", "Data Mining"]
+  },
   {
     "title": "Junior Frontend Developer",
     "skills": [

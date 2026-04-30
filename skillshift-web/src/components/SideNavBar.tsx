@@ -5,11 +5,10 @@ export default function SideNavBar() {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
-  const getNavLinkClass = ({ isActive }: { isActive: boolean }) => 
-    `flex items-center gap-3 px-4 py-3 mx-2 my-1 rounded-lg font-semibold transition-all duration-300 ${
-      isActive 
-        ? 'bg-white text-primary shadow-sm' 
-        : 'text-slate-500 hover:bg-slate-100 hover:translate-x-1'
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `flex items-center gap-3 px-4 py-3 mx-2 my-1 rounded-lg font-semibold transition-all duration-300 ${isActive
+      ? 'bg-white text-primary shadow-sm'
+      : 'text-slate-500 hover:bg-slate-100 hover:translate-x-1'
     }`;
 
   return (
@@ -22,6 +21,14 @@ export default function SideNavBar() {
         <NavLink to="/upload" className={getNavLinkClass}>
           <span className="material-symbols-outlined">dashboard</span>
           <span className="font-label-md text-label-md">Dashboard</span>
+        </NavLink>
+        <NavLink to="/suggestion-master" className={getNavLinkClass}>
+          <span className="material-symbols-outlined">psychology_alt</span>
+          <span className="font-label-md text-label-md">Suggestion Master</span>
+        </NavLink>
+        <NavLink to="/job-alerts" className={getNavLinkClass}>
+          <span className="material-symbols-outlined">work_history</span>
+          <span className="font-label-md text-label-md">Job Alerts</span>
         </NavLink>
         <NavLink to="/skills-analysis" className={getNavLinkClass}>
           <span className="material-symbols-outlined">psychology</span>

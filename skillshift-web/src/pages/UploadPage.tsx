@@ -9,7 +9,7 @@ import { rolesDataset } from '../data/rolesDataset';
 export default function UploadPage() {
   const navigate = useNavigate();
   const { setResumeText } = useResume();
-  const [activeTab, setActiveTab] = useState<'upload' | 'type'>('upload');
+  const [activeTab, setActiveTab] = useState<'upload' | 'type' | 'ai'>('upload');
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   
@@ -21,6 +21,29 @@ export default function UploadPage() {
   const roleSuggestions = manualRole 
     ? allRoles.filter(r => r.toLowerCase().includes(manualRole.toLowerCase())).slice(0, 5)
     : allRoles.slice(0, 5);
+
+  const [aiSuggestions, setAiSuggestions] = useState<any[]>([]);
+  const [isAiLoading, setIsAiLoading] = useState(false);
+  const { resumeText, setSelectedPlatform, processResume } = useResume();
+
+  const handleAiSuggestion = () => {
+    if (!resumeText) return;
+    setIsAiLoading(true);
+    
+    setTimeout(() => {
+        const text = resumeText.toLowerCase();
+        const suggestions = rolesDataset.map(role => {
+            const matches = role.skills.filter(s => text.includes(s.toLowerCase()));
+            return { ...role, matchCount: matches.length };
+        })
+        .filter(r => r.matchCount > 0)
+        .sort((a, b) => b.matchCount - a.matchCount)
+        .slice(0, 3);
+        
+        setAiSuggestions(suggestions);
+        setIsAiLoading(false);
+    }, 1500);
+  };
 
   const handleContinue = () => {
     navigate('/platform');
@@ -98,6 +121,12 @@ export default function UploadPage() {
                   >
                     Manual Entry
                   </button>
+                  <button 
+                    onClick={() => setActiveTab('ai')}
+                    className={`pb-3 px-4 text-sm font-semibold transition-all ${activeTab === 'ai' ? 'border-b-2 border-primary text-primary' : 'text-slate-500 hover:text-slate-800'}`}
+                  >
+                    AI Suggestion
+                  </button>
                 </div>
 
                 {activeTab === 'upload' ? (
@@ -143,7 +172,7 @@ export default function UploadPage() {
                     </div>
                     <p className="text-[10px] text-slate-400 font-medium pt-4 uppercase tracking-widest">Supported: PDF, DOCX, TXT (Max 5MB)</p>
                   </div>
-                ) : (
+                ) : activeTab === 'type' ? (
                   <div className="flex flex-col space-y-4">
                     <div className="relative z-10">
                       <label className="font-label-md text-on-surface block mb-2">Aimed Role</label>
@@ -193,6 +222,52 @@ export default function UploadPage() {
                       Analyze Profile
                     </button>
                   </div>
+                ) : (
+                   <div className="space-y-6">
+                      <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 text-center">
+                         <span className="material-symbols-outlined text-4xl text-primary mb-2">psychology</span>
+                         <h3 className="text-lg font-bold text-slate-900 mb-2">Automated Career Mapping</h3>
+                         <p className="text-sm text-slate-500 mb-6">Upload your resume first, then our AI will scan 110+ roles to suggest the perfect path for you.</p>
+                         
+                         {!resumeText ? (
+                            <button onClick={() => setActiveTab('upload')} className="px-6 py-2 bg-white border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all">
+                               Upload Resume Now
+                            </button>
+                         ) : (
+                            <button 
+                                onClick={handleAiSuggestion} 
+                                disabled={isAiLoading}
+                                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95 disabled:opacity-50"
+                            >
+                               {isAiLoading ? 'Analyzing Skills...' : 'Suggest Best Roles'}
+                            </button>
+                         )}
+                      </div>
+
+                      {aiSuggestions.length > 0 && (
+                         <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest">Recommended Paths for You</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                               {aiSuggestions.map((suggestion, idx) => (
+                                  <div key={idx} className="p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition-all cursor-pointer group"
+                                       onClick={async () => {
+                                          setSelectedPlatform(suggestion.title);
+                                          setIsAiLoading(true);
+                                          await processResume();
+                                          setIsAiLoading(false);
+                                          navigate('/results');
+                                       }}>
+                                     <p className="font-bold text-slate-900 group-hover:text-primary transition-colors">{suggestion.title}</p>
+                                     <p className="text-[10px] text-slate-400 mt-1 uppercase font-bold">{suggestion.domain}</p>
+                                     <div className="mt-3 flex items-center gap-1 text-primary text-[10px] font-bold">
+                                        {isAiLoading ? 'Analyzing...' : 'View Analysis'} <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                                     </div>
+                                  </div>
+                               ))}
+                            </div>
+                         </div>
+                      )}
+                   </div>
                 )}
               </div>
             </div>

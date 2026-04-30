@@ -10,8 +10,37 @@ export default function CoursePage() {
   // Format the skill name nicely
   const displaySkill = skill ? decodeURIComponent(skill).replace(/-/g, ' ') : 'Course';
 
-  // We use a high quality 4-hour FreeCodeCamp video as the playable tutorial.
-  const videoEmbedUrl = "https://www.youtube.com/embed/rfscVS0vtbw?si=m_BwR9p_jXWb6sB2";
+  // Mapping of skills to high-quality 4+ hour YouTube tutorial video IDs
+  const videoMapping: Record<string, string> = {
+    'python': 'rfscVS0vtbw',
+    'java': 'A74Tojjf6T4',
+    'javascript': 'jS4aFq5-91M',
+    'cpp': '8jLOx1hD3_o',
+    'c++': '8jLOx1hD3_o',
+    'sql': 'HXV3zeQHqGY',
+    'html': 'mJgZ7gzSshk',
+    'css': 'mJgZ7gzSshk',
+    'aws': 'SOTamWNgDKc',
+    'figma': 'jwCmXW9S_H8',
+    'data-science': 'ua-CiDNNj30',
+    'machine-learning': 'ua-CiDNNj30',
+    'devops': 'hQcFE0nvguU',
+    'project-management': 'Pyv4V1W0Wk4',
+    'aptitude': 'WfMtoX_oU7I',
+    'dsa': '8hly31Kuy2g'
+  };
+
+  const normalizedSkill = skill?.toLowerCase() || 'python';
+  
+  // Try exact match, then try partial match
+  let videoId = videoMapping[normalizedSkill];
+  
+  if (!videoId) {
+    const key = Object.keys(videoMapping).find(k => normalizedSkill.includes(k) || k.includes(normalizedSkill));
+    videoId = key ? videoMapping[key] : 'rfscVS0vtbw';
+  }
+
+  const videoEmbedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
   return (
     <div className="flex bg-background min-h-screen">

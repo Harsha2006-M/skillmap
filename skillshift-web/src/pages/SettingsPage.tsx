@@ -2,9 +2,11 @@ import SideNavBar from '../components/SideNavBar';
 import TopAppBar from '../components/TopAppBar';
 import BottomNav from '../components/BottomNav';
 import { useAuth } from '../context/AuthContext';
+import { useResume } from '../context/ResumeContext';
 
 export default function SettingsPage() {
   const { logout } = useAuth();
+  const { appliedJobs } = useResume();
 
   return (
     <div className="flex bg-background min-h-screen">
@@ -67,6 +69,26 @@ export default function SettingsPage() {
                     <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                   </label>
                 </div>
+              </div>
+
+              {/* Applied Jobs */}
+              <div className="pt-6 border-t border-slate-100">
+                <h3 className="text-lg font-semibold text-slate-800 mb-4">Applied Jobs</h3>
+                {appliedJobs.length > 0 ? (
+                  <div className="space-y-3">
+                    {appliedJobs.map((job: any, idx: number) => (
+                      <div key={idx} className="p-4 bg-slate-50 rounded-xl border border-slate-100 flex justify-between items-center">
+                        <div>
+                          <p className="font-bold text-slate-900">{job.role}</p>
+                          <p className="text-sm text-slate-500">{job.company} • {job.location}</p>
+                        </div>
+                        <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Applied</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-slate-500 italic">No applications yet. Browse job alerts to get started!</p>
+                )}
               </div>
 
               {/* Danger Zone */}

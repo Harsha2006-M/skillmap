@@ -8,6 +8,8 @@ interface ResumeContextType {
   setSelectedPlatform: (platform: string) => void;
   analysisResult: any;
   processResume: () => Promise<any>;
+  appliedJobs: any[];
+  addAppliedJob: (job: any) => void;
 }
 
 const ResumeContext = createContext<ResumeContextType | undefined>(undefined);
@@ -16,6 +18,14 @@ export function ResumeProvider({ children }: { children: ReactNode }) {
   const [resumeText, setResumeText] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState('');
   const [analysisResult, setAnalysisResult] = useState<any>(null);
+  const [appliedJobs, setAppliedJobs] = useState<any[]>([]);
+
+  const addAppliedJob = (job: any) => {
+    setAppliedJobs(prev => {
+        if (prev.find(j => j.id === job.id)) return prev;
+        return [...prev, job];
+    });
+  };
 
   const processResume = async () => {
     // Simulate API delay
@@ -87,7 +97,16 @@ export function ResumeProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ResumeContext.Provider value={{ resumeText, setResumeText, selectedPlatform, setSelectedPlatform, analysisResult, processResume }}>
+    <ResumeContext.Provider value={{ 
+      resumeText, 
+      setResumeText, 
+      selectedPlatform, 
+      setSelectedPlatform, 
+      analysisResult, 
+      processResume,
+      appliedJobs,
+      addAppliedJob
+    }}>
       {children}
     </ResumeContext.Provider>
   );
